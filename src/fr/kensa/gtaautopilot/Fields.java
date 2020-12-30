@@ -14,7 +14,7 @@ public class Fields {
     public static final int turnTime = 5;
     public static final int bigTurnTime = 1000;
 
-    public static final int forwardTime = 200;
+    public static final int forwardTime = 150;
 
 
 
