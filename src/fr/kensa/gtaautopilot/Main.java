@@ -45,25 +45,25 @@ public class Main extends JFrame {
 
                     // System.out.println("red : "+arrowTop.getRed() + " green : "+ arrowTop.getGreen()+ " blue : "+arrowTop.getBlue());
                     if (arrowTop.getRed() == 255 && arrowTop.getGreen() == 175 && arrowTop.getBlue() == 175) {
-                        System.out.println("dans le chemin");
+                        System.out.println("forward");
                         forward();
                     }else{
                         if(arrowRight.getRed() == 255 && arrowRight.getGreen() == 175 && arrowRight.getBlue() == 175){
-                            System.out.println("at right");
+                            System.out.println("right");
                             turnRight();
                         }
                         if(arrowVeryRight.getRed() == 255 && arrowVeryRight.getGreen() == 175 && arrowVeryRight.getBlue() == 175){
-                            System.out.println("at very right");
+                            System.out.println("big right");
                             turnVeryRight();
 
 
                         }
                         if(arrowVeryLeft.getRed() == 255 && arrowVeryLeft.getGreen() == 175 && arrowVeryLeft.getBlue() == 175) {
-                            System.out.println("at very left");
+                            System.out.println("big left");
                             turnVeryLeft();
                         }
                         if(arrowLeft.getRed() == 255 && arrowLeft.getGreen() == 175 && arrowLeft.getBlue() == 175) {
-                            System.out.println("at left");
+                            System.out.println("left");
 
                             turnleft();
                         }
