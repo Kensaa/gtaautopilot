@@ -24,6 +24,7 @@ public class Main extends JFrame {
     Robot r = null;
     static Main instance;
     public boolean enabled = false;
+    public boolean paused = false;
     public boolean render = false;
 
     Thread t = new Thread(){
@@ -34,10 +35,13 @@ public class Main extends JFrame {
                 if(render){
                     instance.getGraphics().drawImage(map,0,0,null);
                 }
-                if(enabled) {
+                if(enabled && !paused) {
                     Color arrowTop = new Color(map.getRGB(Fields.player1.x, Fields.player1.y));
                     Color arrowRight = new Color(map.getRGB(Fields.player1.x+10, Fields.player1.y));
                     Color arrowLeft = new Color(map.getRGB(Fields.player1.x-10, Fields.player1.y));
+                    Color arrowVeryRight = new Color(map.getRGB(Fields.player1.x+20, Fields.player1.y));
+                    Color arrowVeryLeft = new Color(map.getRGB(Fields.player1.x-20, Fields.player1.y));
+
 
                     // System.out.println("red : "+arrowTop.getRed() + " green : "+ arrowTop.getGreen()+ " blue : "+arrowTop.getBlue());
                     if (arrowTop.getRed() == 255 && arrowTop.getGreen() == 175 && arrowTop.getBlue() == 175) {
@@ -48,14 +52,29 @@ public class Main extends JFrame {
                             System.out.println("at right");
                             turnRight();
                         }
-                        if(arrowLeft.getRed() == 255 && arrowLeft.getGreen() == 175 && arrowLeft.getBlue() == 175){
+                        if(arrowVeryRight.getRed() == 255 && arrowVeryRight.getGreen() == 175 && arrowVeryRight.getBlue() == 175){
+                            System.out.println("at very right");
+                            turnVeryRight();
+
+
+                        }
+                        if(arrowVeryLeft.getRed() == 255 && arrowVeryLeft.getGreen() == 175 && arrowVeryLeft.getBlue() == 175) {
+                            System.out.println("at very left");
+                            turnVeryLeft();
+                        }
+                        if(arrowLeft.getRed() == 255 && arrowLeft.getGreen() == 175 && arrowLeft.getBlue() == 175) {
                             System.out.println("at left");
+
                             turnleft();
+                        }
+
+
+
                         }
                     }
                 }
             }
-        }
+
     };
 
     public static void main(String[] args){
@@ -163,6 +182,49 @@ public class Main extends JFrame {
         turn.start();
     }
 
+    public void turnVeryLeft(){
+        Thread turn = new Thread(){
+            @Override
+            public void run() {
+                getRobot().keyPress(KeyEvent.VK_Q);
+                getRobot().keyPress(KeyEvent.VK_Z);
+
+                try {
+                    Thread.sleep(Fields.bigTurnTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                getRobot().keyRelease(KeyEvent.VK_Q);
+                getRobot().keyRelease(KeyEvent.VK_Z);
+
+
+
+            }
+        };
+        turn.start();
+    }
+    public void turnVeryRight(){
+        Thread turn = new Thread(){
+            @Override
+            public void run() {
+                getRobot().keyPress(KeyEvent.VK_D);
+                getRobot().keyPress(KeyEvent.VK_Z);
+
+                try {
+                    Thread.sleep(Fields.bigTurnTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                getRobot().keyRelease(KeyEvent.VK_D);
+                getRobot().keyRelease(KeyEvent.VK_Z);
+
+
+
+            }
+        };
+        turn.start();
+    }
+
     public void forward(){
         Thread turn = new Thread(){
             @Override
@@ -170,7 +232,7 @@ public class Main extends JFrame {
                 getRobot().keyPress(KeyEvent.VK_Z);
 
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(Fields.forwardTime);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

@@ -23,6 +23,8 @@ public class KeyListener implements NativeKeyListener {
         if(nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_F12){
             toggle = true;
            // System.out.println("toggle");
+        }else if((nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_D || nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_Q || nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_S || nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_Z) && main.enabled){
+            main.paused = true;
         }
     }
 
@@ -34,6 +36,8 @@ public class KeyListener implements NativeKeyListener {
                 main.enabled = !main.enabled;
                 System.out.println(main.enabled);
             }
+        }else if((nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_D || nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_Q || nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_S || nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_Z) && main.enabled){
+            main.paused = false;
         }
     }
 }
