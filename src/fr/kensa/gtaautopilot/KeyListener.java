@@ -19,7 +19,6 @@ public class KeyListener implements NativeKeyListener {
 
     @Override
     public void nativeKeyPressed(NativeKeyEvent nativeKeyEvent) {
-       // System.out.println("pressed : "+nativeKeyEvent.getKeyCode());
         if(nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_F12){
             toggle = true;
            // System.out.println("toggle");
@@ -30,7 +29,6 @@ public class KeyListener implements NativeKeyListener {
 
     @Override
     public void nativeKeyReleased(NativeKeyEvent nativeKeyEvent) {
-       // System.out.println("released : "+nativeKeyEvent.getKeyCode());
         if(nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_F12){
             if(toggle){
                 main.enabled = !main.enabled;

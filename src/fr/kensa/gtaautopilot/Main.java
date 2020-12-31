@@ -44,25 +44,25 @@ public class Main extends JFrame {
 
 
                     // System.out.println("red : "+arrowTop.getRed() + " green : "+ arrowTop.getGreen()+ " blue : "+arrowTop.getBlue());
-                    if (arrowTop.getRed() == 255 && arrowTop.getGreen() == 175 && arrowTop.getBlue() == 175) {
+                    if (arrowTop.getRed() == Fields.gpsColor.getRed() && arrowTop.getGreen() == Fields.gpsColor.getGreen() && arrowTop.getBlue() == Fields.gpsColor.getBlue()) {
                         System.out.println("forward");
                         forward();
                     }else{
-                        if(arrowRight.getRed() == 255 && arrowRight.getGreen() == 175 && arrowRight.getBlue() == 175){
+                        if(arrowRight.getRed() == Fields.gpsColor.getRed() && arrowRight.getGreen() == Fields.gpsColor.getGreen() && arrowRight.getBlue() == Fields.gpsColor.getBlue()){
                             System.out.println("right");
                             turnRight();
                         }
-                        if(arrowVeryRight.getRed() == 255 && arrowVeryRight.getGreen() == 175 && arrowVeryRight.getBlue() == 175){
+                        if(arrowVeryRight.getRed() == Fields.gpsColor.getRed() && arrowVeryRight.getGreen() == Fields.gpsColor.getGreen() && arrowVeryRight.getBlue() == Fields.gpsColor.getBlue()){
                             System.out.println("big right");
                             turnVeryRight();
 
 
                         }
-                        if(arrowVeryLeft.getRed() == 255 && arrowVeryLeft.getGreen() == 175 && arrowVeryLeft.getBlue() == 175) {
+                        if(arrowVeryLeft.getRed() == Fields.gpsColor.getRed() && arrowVeryLeft.getGreen() == Fields.gpsColor.getGreen() && arrowVeryLeft.getBlue() == Fields.gpsColor.getBlue()) {
                             System.out.println("big left");
                             turnVeryLeft();
                         }
-                        if(arrowLeft.getRed() == 255 && arrowLeft.getGreen() == 175 && arrowLeft.getBlue() == 175) {
+                        if(arrowLeft.getRed() == Fields.gpsColor.getRed() && arrowLeft.getGreen() == Fields.gpsColor.getGreen() && arrowLeft.getBlue() == Fields.gpsColor.getBlue()) {
                             System.out.println("left");
 
                             turnleft();

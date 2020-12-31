@@ -16,6 +16,8 @@ public class Fields {
 
     public static final int forwardTime = 150;
 
+    public static final Color gpsColor = new Color(255,175,175);
+
 
 
 

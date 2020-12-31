@@ -36,11 +36,3 @@ public class Utils {
         return newImg;
     }
 }
-
-
-
-//road
-
-//background
-
-//168 84 243
