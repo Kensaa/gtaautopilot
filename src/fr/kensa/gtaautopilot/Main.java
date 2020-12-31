@@ -55,8 +55,6 @@ public class Main extends JFrame {
                         if(arrowVeryRight.getRed() == Fields.gpsColor.getRed() && arrowVeryRight.getGreen() == Fields.gpsColor.getGreen() && arrowVeryRight.getBlue() == Fields.gpsColor.getBlue()){
                             System.out.println("big right");
                             turnVeryRight();
-
-
                         }
                         if(arrowVeryLeft.getRed() == Fields.gpsColor.getRed() && arrowVeryLeft.getGreen() == Fields.gpsColor.getGreen() && arrowVeryLeft.getBlue() == Fields.gpsColor.getBlue()) {
                             System.out.println("big left");
@@ -65,7 +63,7 @@ public class Main extends JFrame {
                         if(arrowLeft.getRed() == Fields.gpsColor.getRed() && arrowLeft.getGreen() == Fields.gpsColor.getGreen() && arrowLeft.getBlue() == Fields.gpsColor.getBlue()) {
                             System.out.println("left");
 
-                            turnleft();
+                            turnLeft();
                         }
 
 
@@ -142,6 +140,8 @@ public class Main extends JFrame {
     }
 
     public void turnRight(){
+
+
         Thread turn = new Thread(){
             @Override
             public void run() {
@@ -160,7 +160,9 @@ public class Main extends JFrame {
         };
         turn.start();
     }
-    public void turnleft(){
+    public void turnLeft(){
+
+
         Thread turn = new Thread(){
             @Override
             public void run() {
@@ -226,6 +228,8 @@ public class Main extends JFrame {
     }
 
     public void forward(){
+
+
         Thread turn = new Thread(){
             @Override
             public void run() {
