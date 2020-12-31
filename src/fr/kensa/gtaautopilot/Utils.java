@@ -43,9 +43,12 @@ public class Utils {
         int h2 = rect.y+rect.height;
 
         int rgb = c.getRGB();
-
         for(int y = h1; y<h2;y++){
             for(int x = w1; x<w2;x++){
+                Color cc = new Color(img.getRGB(x,y));
+                /*System.out.println("red : "+cc.getRed()+" green : "+cc.getGreen()+ " blue : "+cc.getBlue());
+                System.out.println("red : "+c.getRed()+" green : "+c.getGreen()+ " blue : "+c.getBlue());*/
+
                 if(img.getRGB(x,y) == rgb){
                     return true;
                 }

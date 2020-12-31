@@ -36,15 +36,36 @@ public class Main extends JFrame {
                     instance.getGraphics().drawImage(map,0,0,null);
                 }
                 if(enabled && !paused) {
-                    Color arrowTop = new Color(map.getRGB(Fields.player1.x, Fields.player1.y));
+                    /*Color arrowTop = new Color(map.getRGB(Fields.player1.x, Fields.player1.y));
                     Color arrowRight = new Color(map.getRGB(Fields.player1.x+10, Fields.player1.y));
                     Color arrowLeft = new Color(map.getRGB(Fields.player1.x-10, Fields.player1.y));
                     Color arrowVeryRight = new Color(map.getRGB(Fields.player1.x+20, Fields.player1.y));
-                    Color arrowVeryLeft = new Color(map.getRGB(Fields.player1.x-20, Fields.player1.y));
+                    Color arrowVeryLeft = new Color(map.getRGB(Fields.player1.x-20, Fields.player1.y));*/
 
+
+                    if (Utils.checkColor(Fields.gpsColor,Fields.arrowTop,map)) {
+                        System.out.println("forward");
+                        forward();
+                    }else{
+                        if(Utils.checkColor(Fields.gpsColor,Fields.arrowVeryRight,map)){
+                            System.out.println("big right");
+                            turnVeryRight();
+                        }else if(Utils.checkColor(Fields.gpsColor,Fields.arrowRight,map)){
+                            System.out.println("right");
+                            turnRight();
+                        }
+
+                        if(Utils.checkColor(Fields.gpsColor,Fields.arrowVeryLeft,map)){
+                            System.out.println("big left");
+                            turnVeryLeft();
+                        }else if(Utils.checkColor(Fields.gpsColor,Fields.arrowLeft,map)){
+                            System.out.println("left");
+                            turnLeft();
+                        }
+                    }
 
                     // System.out.println("red : "+arrowTop.getRed() + " green : "+ arrowTop.getGreen()+ " blue : "+arrowTop.getBlue());
-                    if (arrowTop.getRed() == Fields.gpsColor.getRed() && arrowTop.getGreen() == Fields.gpsColor.getGreen() && arrowTop.getBlue() == Fields.gpsColor.getBlue()) {
+                    /*if (arrowTop.getRed() == Fields.gpsColor.getRed() && arrowTop.getGreen() == Fields.gpsColor.getGreen() && arrowTop.getBlue() == Fields.gpsColor.getBlue()) {
                         System.out.println("forward");
                         forward();
                     }else{
@@ -71,7 +92,7 @@ public class Main extends JFrame {
 
 
 
-                        }
+                        }*/
                     }
                 }
             }
