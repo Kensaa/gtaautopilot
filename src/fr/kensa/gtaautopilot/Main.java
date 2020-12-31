@@ -48,23 +48,26 @@ public class Main extends JFrame {
                         System.out.println("forward");
                         forward();
                     }else{
-                        if(arrowRight.getRed() == Fields.gpsColor.getRed() && arrowRight.getGreen() == Fields.gpsColor.getGreen() && arrowRight.getBlue() == Fields.gpsColor.getBlue()){
-                            System.out.println("right");
-                            turnRight();
-                        }
+
                         if(arrowVeryRight.getRed() == Fields.gpsColor.getRed() && arrowVeryRight.getGreen() == Fields.gpsColor.getGreen() && arrowVeryRight.getBlue() == Fields.gpsColor.getBlue()){
                             System.out.println("big right");
                             turnVeryRight();
+                        }else{
+                            if(arrowRight.getRed() == Fields.gpsColor.getRed() && arrowRight.getGreen() == Fields.gpsColor.getGreen() && arrowRight.getBlue() == Fields.gpsColor.getBlue()){
+                                System.out.println("right");
+                                turnRight();
+                            }
                         }
                         if(arrowVeryLeft.getRed() == Fields.gpsColor.getRed() && arrowVeryLeft.getGreen() == Fields.gpsColor.getGreen() && arrowVeryLeft.getBlue() == Fields.gpsColor.getBlue()) {
                             System.out.println("big left");
                             turnVeryLeft();
+                        }else{
+                            if(arrowLeft.getRed() == Fields.gpsColor.getRed() && arrowLeft.getGreen() == Fields.gpsColor.getGreen() && arrowLeft.getBlue() == Fields.gpsColor.getBlue()) {
+                                System.out.println("left");
+                                turnLeft();
+                            }
                         }
-                        if(arrowLeft.getRed() == Fields.gpsColor.getRed() && arrowLeft.getGreen() == Fields.gpsColor.getGreen() && arrowLeft.getBlue() == Fields.gpsColor.getBlue()) {
-                            System.out.println("left");
 
-                            turnLeft();
-                        }
 
 
 
@@ -78,7 +81,6 @@ public class Main extends JFrame {
     public static void main(String[] args){
         instance = new Main();
     }
-
     public Main(){
         try {
             r = new Robot();
@@ -183,7 +185,6 @@ public class Main extends JFrame {
         };
         turn.start();
     }
-
     public void turnVeryLeft(){
         Thread turn = new Thread(){
             @Override
@@ -226,7 +227,6 @@ public class Main extends JFrame {
         };
         turn.start();
     }
-
     public void forward(){
 
 

@@ -35,4 +35,22 @@ public class Utils {
 
         return newImg;
     }
+
+    public static boolean checkColor(Color c, Rectangle rect,BufferedImage img){
+        int w1 = rect.x;
+        int w2 = rect.x+rect.width;
+        int h1 = rect.y;
+        int h2 = rect.y+rect.height;
+
+        int rgb = c.getRGB();
+
+        for(int y = h1; y<h2;y++){
+            for(int x = w1; x<w2;x++){
+                if(img.getRGB(x,y) == rgb){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
