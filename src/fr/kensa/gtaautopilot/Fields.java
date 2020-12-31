@@ -16,7 +16,7 @@ public class Fields {
     public static final Point player1 = new Point(132,125);
 
 
-    public static final Point arrowTopP1 = new Point(126,124);
+    public static final Point arrowTopP1 = new Point(128,124);
     public static final Point arrowTopP2 = new Point(132,125);
     public static final Rectangle arrowTop = new Rectangle(arrowTopP1.x,arrowTopP1.y,arrowTopP2.x-arrowTopP1.x,arrowTopP2.y-arrowTopP1.y);
 
